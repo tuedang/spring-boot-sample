@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController // assumes @ResponseBody annotation in methods annotated with  @RequestMapping
+@RestController
 @RequestMapping(value = "/books", produces = MediaType.APPLICATION_JSON_VALUE)
 public class BookController {
 
@@ -20,7 +20,6 @@ public class BookController {
     public Iterable<Book> books() {
         return bookRepository.findAll();
     }
-
 
     @RequestMapping(value = "/{isbn}")
     public Book book(@PathVariable("isbn") String isbn) {
@@ -45,5 +44,9 @@ public class BookController {
         return bookRepository.findBooksByAuthor(author);
     }
 
+    @RequestMapping("/term/{term}")
+    public Iterable<Book> booksTermSearch(@PathVariable("term") String term) {
+        return bookRepository.searchFilter(term);
+    }
 
 }

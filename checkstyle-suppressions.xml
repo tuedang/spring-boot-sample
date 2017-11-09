@@ -7,4 +7,5 @@
 <suppressions>
     <suppress checks="Javadoc" files="."/>
     <suppress checks="DesignForExtension" files="."/>
+    <suppress checks="HideUtilityClassConstructor" files="."/>
 </suppressions>

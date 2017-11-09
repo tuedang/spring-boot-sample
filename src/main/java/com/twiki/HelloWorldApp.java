@@ -8,9 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ComponentScan
 @EnableAutoConfiguration
 @EnableJpaRepositories
-public final class HelloWorldApp {
-    private HelloWorldApp() {
-    }
+public class HelloWorldApp {
 
     public static void main(String[] args) throws Exception {
         SpringApplication.run(HelloWorldApp.class, args);
